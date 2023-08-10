@@ -137,19 +137,19 @@ VALUES (13, '教育', true);
 ```
 
 
-### backend stack
+### Backend stack
 
 - Java
 - spring boot 全家桶
 
-### frontend stack
+### Frontend stack
 
 - next.js
 - taliwind css
 - echarts
 
 
-### contribute
+### Contribute
 
 
 项目负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
@@ -159,7 +159,7 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
 
 
-### 联系我们
+### Contact us
 
 - 在我们的 [GitHub Repo](https://github.com/Magic-Emerge/magic-emerge) 上提交 Issue 或 PR
 - 在我们的 [Discord 社区](https://discord.gg/SSpD6kbc) 上加入讨论
