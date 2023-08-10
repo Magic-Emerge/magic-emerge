@@ -166,4 +166,5 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 - 发送邮件至 hello@dify.ai
 - 作者: wechat
 
-![](./images/wechat.jpg)
+<img src="./images/wechat.jpg" width="50%">
+
