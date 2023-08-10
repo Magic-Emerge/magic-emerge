@@ -1,6 +1,6 @@
 ![](./images/img.png)
 <p align="center">
-  <a href="./README_CN.md">简体中文</a> | 
+  <a href="./README.md">简体中文</a> | 
   <a href="./README_EN.md">English</a>
 </p>
 
