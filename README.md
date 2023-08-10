@@ -1,10 +1,17 @@
 ![](./images/img.png)
 <p align="center">
-  <a href="./README_CN.md">简体中文</a>
+  <a href="./README_CN.md">简体中文</a> | 
   <a href="./README_EN.md">English</a>
 </p>
 
-### Features
+
+### Product View
+
+
+![Alt Text](./images/product.gif)
+
+
+### Features 
 
 1. 开箱即用的专业版的聊天对话应用
 2. 可视化的应用数据分析
@@ -130,6 +137,33 @@ VALUES (13, '教育', true);
 ```
 
 
+### backend stack
+
+- Java
+- spring boot 全家桶
+
+### frontend stack
+
+- next.js
+- taliwind css
+- echarts
+
+
+### contribute
+
+
+项目负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
+
+UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
 
 
+
+### 联系我们
+
+- 在我们的 [GitHub Repo](https://github.com/Magic-Emerge/magic-emerge) 上提交 Issue 或 PR
+- 在我们的 [Discord 社区](https://discord.gg/SSpD6kbc) 上加入讨论
+- 发送邮件至 hello@dify.ai
+- 作者: wechat
+
+![](./images/wechat.jpg)
