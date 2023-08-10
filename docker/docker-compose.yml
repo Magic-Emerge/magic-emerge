@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  # 配置后端服务
+  app:
+    build:
+      context: ../app # 后端应用的路径
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/bluebird/:/data/bluebird/media/
+    restart: always
+    expose:
+      - 5000 # 后端应用的端口号
+
+  # 配置前端服务
+  web:
+    build:
+      context: ../web # 前端应用的路径
+      dockerfile: Dockerfile
+    restart: always
+    expose:
+      - 3000 # 前端应用的端口号
+
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      # The password for the default postgres user.
+      POSTGRES_PASSWORD: bluebird123456
+      # The name of the default postgres database.
+      POSTGRES_DB: bluebird-app
+      # postgres data directory
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./volumes/db/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # 配置Nginx服务
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8000:3000"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    restart: always
+    depends_on:
+      - app
+      - web

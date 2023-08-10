@@ -1,0 +1,82 @@
+# datasource
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://172.19.75.41:5432/bluebird_app
+    username: kb_user
+    password: 1qaz2wsx
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  # spring Java Mail
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: 18844145842@163.com
+    password: OZFYEYAASQJMUXZA
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  thymeleaf:
+    cache: false
+
+#mybatis
+mybatis-plus:
+  type-aliases-package: ai.magicemerge.bluebird.app.dal.model
+  mapper-locations: classpath*:/mappers/**/*.xml
+  global-config:
+    banner: false
+
+
+# backend
+system:
+  remote:
+    address: http://localhost:3000
+
+
+
+# storage local
+storage:
+  local:
+    uploadFilePath: /data/oneshop/media/
+    maxSize: 10000
+    allowEmpty: false
+    allowTypes: png,jpg,jpeg,txt,zip,tar,gz,md,doc,xls
+    qrcodeWidth: 200
+    qrcodeHeight: 200
+    qrcodeImgFormat: jpeg
+    enn13Width: 200
+    enn13Height: 100
+    enn13ImgFormat: png
+
+
+# web
+web:
+  allowed:
+    origins: '*'
+  allow:
+    credentials: true
+    methods: GET,POST,PATCH
+    headers: '*'
+  expose:
+    headers: Server,Content-Length,Authorization,Access-Token,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+
+
+server:
+  secret:
+    enable: true
+    desSecret-key: gh2c23b44r2b1415343aab5a8286985cs
+    desIv: 45467671
+
+
+dify:
+  openapi:
+    url:
+      https://api.dify.ai/
+    version:
+      v1/
+    chat-path:
+      chat-messages

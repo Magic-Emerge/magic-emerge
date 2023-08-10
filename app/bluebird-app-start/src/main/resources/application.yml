@@ -1,0 +1,17 @@
+spring:
+    application:
+      name: bluebird-app
+    lifecycle:
+      timeout-per-shutdown-phase: 20s
+    profiles:
+      active: prod
+
+server:
+  port: 5000
+  shutdown: graceful
+  tomcat:
+    accept-count: 200
+  compression:
+    enabled: true
+  http2:
+    enabled: true

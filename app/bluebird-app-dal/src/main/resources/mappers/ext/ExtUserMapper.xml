@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ai.magicemerge.bluebird.app.dal.mapper.ext.ExtUserMapper">
+
+    <update id="updateUserInfoByUserId">
+        UPDATE sys_user
+        SET username = IFNULL(NULLIF(#{username}, ''), username),
+            avatar   = IFNULL(NULLIF(#{avatar}, ''), avatar)
+        WHERE user_id = :userid;
+    </update>
+    <select id="queryUserByUserId" resultType="ai.magicemerge.bluebird.app.dal.model.User">
+        select id
+        from sys_user
+        where open_user_id = #{user_id}
+    </select>
+    <select id="queryUserByKey" resultType="ai.magicemerge.bluebird.app.dal.model.User">
+        SELECT open_user_id
+        from sys_user
+        WHERE ${key} = #{value}
+    </select>
+
+</mapper>

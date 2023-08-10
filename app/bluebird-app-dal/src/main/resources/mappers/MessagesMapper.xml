@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ai.magicemerge.bluebird.app.dal.mapper.MessagesMapper">
+
+    <select id="countMessagesByDate" parameterType="map"
+            resultType="ai.magicemerge.bluebird.app.dal.dto.MessageCountDto">
+        SELECT DATE(created_at) AS datetime, COUNT(*) AS messagescount
+        FROM chat_messages
+        WHERE created_at &gt;= CURRENT_DATE - INTERVAL '${params} days'
+        <if test="workspaceId != null and workspaceId != ''">
+            AND workspace_id = #{workspaceId}
+        </if>
+        <if test="openUserId != null and openUserId != ''">
+            AND open_user_id = #{openUserId}
+        </if>
+        GROUP BY datetime
+        ORDER BY datetime
+    </select>
+
+
+    <select id="sumTokenByDate" parameterType="map" resultType="ai.magicemerge.bluebird.app.dal.dto.MessageTokenDto">
+        SELECT DATE(created_at) AS datetime, SUM(tokens) AS tokenscount,  SUM(fee) AS totalprice
+        FROM chat_messages
+        WHERE created_at &gt;= CURRENT_DATE - INTERVAL '${params} days'
+        <if test="workspaceId != null and workspaceId != ''">
+            AND workspace_id = #{workspaceId}
+        </if>
+        <if test="openUserId != null and openUserId != ''">
+            AND open_user_id = #{openUserId}
+        </if>
+        GROUP BY datetime
+        ORDER BY datetime
+    </select>
+
+    <select id="countActiveUserByDate" parameterType="map"
+            resultType="ai.magicemerge.bluebird.app.dal.dto.ActiveUserDto">
+        SELECT DATE(created_at) AS datetime, COUNT(DISTINCT open_user_id) AS userscount
+        FROM chat_messages
+        WHERE created_at &gt;= CURRENT_DATE - INTERVAL '${params} days'
+        <if test="workspaceId != null and workspaceId != ''">
+            AND workspace_id = #{workspaceId}
+        </if>
+        GROUP BY datetime
+        ORDER BY datetime
+    </select>
+
+
+</mapper>

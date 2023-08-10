@@ -1,0 +1,153 @@
+# datasource
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://xxxxx:5432/bluebird-app
+    username: xxxxx
+    password: xxxxx
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 800000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: bluebirdHikariCP
+      connection-test-query: SELECT 1
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500KB
+      max-request-size: 500KB
+
+  # spring Java Mail
+  mail:
+    host: smtp.qiye.aliyun.com
+    port: 465
+    protocol: smtps
+    username: xxxxx
+    password: xxxxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: UTF-8
+  thymeleaf:
+    cache: false
+
+
+#mybatis
+mybatis-plus:
+  type-aliases-package: ai.magicemerge.bluebird.app.dal.model
+  mapper-locations: classpath*:/mappers/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: true
+      logic-not-delete-value: false
+# knife4j:
+
+
+# backend
+system:
+  remote:
+    address: http://localhost:3000
+
+
+
+# storage local
+storage:
+  local:
+    uploadFilePath: /data/bluebird/media/
+    maxSize: 10000
+    allowEmpty: false
+    allowTypes: png,jpg,jpeg,txt,zip,tar,gz,md,doc,xls
+
+# web
+web:
+  allowed:
+    origins: '*'
+  allow:
+    credentials: true
+    methods: GET,POST,PATCH
+    headers: '*'
+  expose:
+    headers: Server,Content-Length,Authorization,Access-Token,Access-Control-Allow-Origin,Access-Control-Allow-Credentials,Location
+
+
+server:
+  secret:
+    enable: true
+    desSecret-key: gh2c23b44r2b1415343aab5a8286985cs
+    desIv: 45467671
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans, env, metrics, prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+
+
+
+
+dify:
+  openapi:
+    url:
+      https://api.dify.ai/
+    version:
+      v1/
+    chat-path:
+      chat-messages
+    completion-path:
+      completion-messages
+    app-key:
+      app-CkonWxLxvDOytIKztx0aDQYA
+
+
+
+emergeflow:
+  openapi:
+    url: https://api.flowise.ai/
+
+
+logging:
+  level:
+    ai.magicemerge: DEBUG
+
+
+knife4j:
+  basic:
+    enable: true
+    username: magic_emerge
+    password: 1qaz@2wsx
+  enable: true
+
+
+tencent:
+  sms:
+    secret-id: xxxxx
+    secret-key: xxxxxxx
+    endpoint: sms.tencentcloudapi.com
+    timeout: 30000
+    sdk-app-id: xxxx
+    sign-name: xxx
+    template-id: xxxx
+
+
+app:
+  remote:
+    url: http://localhost:3000
+
+img:
+  remote:
+      root:
+        url: http://127:0:0:1:8080

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="167px" height="115px" viewBox="0 0 167 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rectangle-2</title>
+    <g id="GUI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="rectangle-2" transform="translate(-1273.000000, 0.000000)" fill="#FF884D">
+            <path d="M1305.89755,-69.9805796 L1453.89755,-69.9805796 C1456.10669,-69.9805796 1457.89755,-68.1897186 1457.89755,-65.9805796 L1457.89755,82.0194204 C1457.89755,84.2285594 1456.10669,86.0194204 1453.89755,86.0194204 L1305.89755,86.0194204 C1303.68842,86.0194204 1301.89755,84.2285594 1301.89755,82.0194204 L1301.89755,-65.9805796 C1301.89755,-68.1897186 1303.68842,-69.9805796 1305.89755,-69.9805796 Z" id="rectangle-2" transform="translate(1379.897555, 8.019420) rotate(-56.000000) translate(-1379.897555, -8.019420) "></path>
+        </g>
+    </g>
+</svg>

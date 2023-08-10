@@ -1,0 +1,123 @@
+# datasource
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/bluebird-app
+    username: postgres
+    password: bluebird123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500KB
+      max-request-size: 500KB
+
+  # spring Java Mail
+  # spring Java Mail
+  mail:
+    host: smtp.qiye.aliyun.com
+    port: 465
+    protocol: smtps
+    username: xxxxxx
+    password: xxxxxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: UTF-8
+  thymeleaf:
+    cache: false
+
+
+#mybatis
+mybatis-plus:
+  type-aliases-package: ai.magicemerge.bluebird.app.dal.model
+  mapper-locations: classpath*:/mappers/**/*.xml
+  global-config:
+    banner: false
+
+
+# backend
+system:
+  remote:
+    address: http://localhost:3000
+
+
+
+# storage local
+storage:
+  local:
+    uploadFilePath: /data/bluebird/media/
+    maxSize: 10000
+    allowEmpty: false
+    allowTypes: png,jpg,jpeg,txt,zip,tar,gz,md,doc,xls
+    qrcodeWidth: 200
+    qrcodeHeight: 200
+    qrcodeImgFormat: jpeg
+    enn13Width: 200
+    enn13Height: 100
+    enn13ImgFormat: png
+
+# web
+web:
+  allowed:
+    origins: '*'
+  allow:
+    credentials: true
+    methods: GET,POST,PATCH
+    headers: '*'
+  expose:
+    headers: Server,Content-Length,Authorization,Access-Token,Access-Control-Allow-Origin,Access-Control-Allow-Credentials
+
+
+server:
+  secret:
+    enable: true
+    desSecret-key: gh2c23b44r2b1415343aab5a8286985cs
+    desIv: 45467671
+
+
+dify:
+  openapi:
+    url:
+      https://api.dify.ai/
+    version:
+      v1/
+    chat-path:
+      chat-messages
+    completion-path:
+      completion-messages
+    app-key:
+      app-CkonWxLxvDOytIKztx0aDQYA
+
+emergeflow:
+  openapi:
+    url: https://api.flowise.ai/
+
+
+
+
+tencent:
+  sms:
+    secret-id: xxxx
+    secret-key: xxxxxx
+    endpoint: sms.tencentcloudapi.com
+    timeout: 30000
+    sdk-app-id: xxx
+    sign-name: xxx
+    template-id: xxx
+
+
+app:
+  remote:
+    url: http://localhost:3000
+
+img:
+  remote:
+    root:
+      url: xxxxxxx
