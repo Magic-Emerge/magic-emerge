@@ -12,7 +12,7 @@
 
 
 ### Features 
-1. 基于Dify API进行开发
+1. 基于[dify](https://github.com/langgenius/dify) API进行开发
 2. 开箱即用的专业版的聊天对话应用
 3. 可视化的应用数据分析
 4. 支持代码、表格的聊天内容展示
