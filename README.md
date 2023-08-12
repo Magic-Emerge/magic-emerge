@@ -166,7 +166,7 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
 - 在我们的 [GitHub Repo](https://github.com/Magic-Emerge/magic-emerge) 上提交 Issue 或 PR
 - 在我们的 [Discord 社区](https://discord.gg/SSpD6kbc) 上加入讨论
-- 发送邮件至 hello@dify.ai
+- 发送邮件至 offical@xuanyong.ai
 - 作者: wechat
 
 <img src="./images/wechat.jpg" width="50%">
