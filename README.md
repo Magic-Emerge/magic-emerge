@@ -152,7 +152,7 @@ VALUES (13, '教育', true);
 - echarts
 
 
-### Contribute
+### Contributer
 
 
 项目负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
