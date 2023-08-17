@@ -4,17 +4,17 @@
   <a href="./README_EN.md">English</a>
 </p>
 
-### Product addr
+## Product addr
 
 [Magic Emerge 官方地址](https://app.magicemerge.ai/)
 
-### Product View
+## Product View
 
 
 ![Alt Text](./images/product.gif)
 
 
-### Features 
+## Features 
 1. 基于[dify](https://github.com/langgenius/dify) API进行开发
 2. 开箱即用的专业版的聊天对话应用
 3. 可视化的应用数据分析
@@ -22,7 +22,7 @@
 5. 支持dify应用配置以及接口调用次数限制
 
 
-### QuickStart
+## QuickStart
 
 1. 配置app springboot应用的启动信息 在`app/bluebird-app-start`的资源目录下找到`application.yml`
 
@@ -140,19 +140,20 @@ VALUES (13, '教育', true);
 ```
 
 
-### Backend stack
+## Backend stack
 
 - Java
 - spring boot 全家桶
+- mybatis-plus
 
-### Frontend stack
+## Frontend stack
 
 - next.js
 - taliwind css
-- echarts
+- echarts.js
 
 
-### Contributer
+## Contributer
 
 
 项目负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
@@ -162,7 +163,7 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
 
 
-### Contact us
+## Contact us
 
 - 在我们的 [GitHub Repo](https://github.com/Magic-Emerge/magic-emerge) 上提交 Issue 或 PR
 - 在我们的 [Discord 社区](https://discord.gg/SSpD6kbc) 上加入讨论
