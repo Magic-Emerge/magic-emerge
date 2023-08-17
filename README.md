@@ -171,3 +171,9 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
 <img src="./images/wechat.jpg" width="50%">
 
+### Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Magic-Emerge/magic-emerge&type=Date)](https://star-history.com/#Magic-Emerge/magic-emerge&Date)
+
+
+
