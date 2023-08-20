@@ -4,7 +4,7 @@
   <a href="./README_EN.md">English</a>
 </p>
 
-## Product addr
+## Product Remote URL
 
 [Magic Emerge 官方地址](https://app.magicemerge.ai/)
 
