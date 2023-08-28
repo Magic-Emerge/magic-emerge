@@ -143,7 +143,7 @@ VALUES (13, '教育', true);
 ## Backend stack
 
 - Java
-- spring boot 全家桶
+- spring boot
 - mybatis-plus
 
 ## Frontend stack
