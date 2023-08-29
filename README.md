@@ -53,9 +53,6 @@ dify:
       chat-messages
     completion-path:
       completion-messages
-    app-key:
-      app-CkonWxLxvDOytIKztx0aDQYA
-
 
 ....
 
