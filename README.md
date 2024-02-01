@@ -203,7 +203,9 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 - 发送邮件至 offical@xuanyong.ai
 - 作者: wechat
 
-<img src="./images/wechat.jpg" width="50%">
+<img src="./images/wechat.jpg" width="30%">
+<img src="./images/group.jpg" width="30%">
+
 
 
 <a href="https://www.producthunt.com/posts/magic-emerge?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-magic&#0045;emerge" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=409397&theme=light" alt="Magic&#0032;Emerge - Building&#0032;the&#0032;best&#0032;application&#0032;services&#0032;for&#0032;AIGC | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
