@@ -6,7 +6,8 @@ COPY package*.json ./
 # ---- Dependencies ----
 RUN npm install -g npm@9.8.1
 FROM base AS dependencies
-RUN npm ci
+# 国内换成淘宝源
+RUN  npm install --registry=http://registry.npmmirror.com
 
 # ---- Build ----
 FROM dependencies AS build

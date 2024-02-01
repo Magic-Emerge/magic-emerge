@@ -4,3 +4,7 @@
 *.iws
 *.iml
 *.ipr
+
+
+docker/data
+docker/volumes
