@@ -71,9 +71,17 @@ tencent:
 
 
 ```
+3. 进入app目录下使用maven构建jar包
+```shell
 
+# 进入app目录
+cd app
 
-3. 使用docker部署
+# 使用下列命令构建jar包, 构建成功后返回根目录
+mvn clean package -Dmaven.test.skip=true
+```
+
+4. 使用docker部署
 
 ```shell
 
@@ -85,7 +93,7 @@ docker-compose up -d
 
 ```
 
-4. 初始化数据库
+5. 初始化数据库
 
 ```sql
 
