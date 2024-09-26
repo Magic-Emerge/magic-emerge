@@ -35,11 +35,11 @@ public class ChatMessageIntegrationImpl implements ChatMessageIntegration {
 	private String apiCompletionPath;
 
 
-	@Value(value = "${law.openapi.url}")
-	private String chatLowUrl;
+//	@Value(value = "${law.openapi.url}")
+//	private String chatLowUrl;
 
-	@Value(value = "${law.openapi.chat-path}")
-	private String chatLowPath;
+//	@Value(value = "${law.openapi.chat-path}")
+//	private String chatLowPath;
 
 
 	@Override
@@ -148,9 +148,9 @@ public class ChatMessageIntegrationImpl implements ChatMessageIntegration {
 			return difyUrl + apiVersion + apiCompletionPath;
 		}
 
-		if (ChatTypeEnum.LAW.name().equals(chatType)) {
-			return chatLowUrl + chatLowPath;
-		}
+//		if (ChatTypeEnum.LAW.name().equals(chatType)) {
+//			return chatLowUrl + chatLowPath;
+//		}
 		return StringUtils.EMPTY;
 	}
 
