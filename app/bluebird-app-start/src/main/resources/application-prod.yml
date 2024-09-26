@@ -121,3 +121,9 @@ img:
   remote:
     root:
       url: xxxxxxx
+
+
+law:
+  openapi:
+    url:
+      http://38.60.203.15/
