@@ -44,37 +44,37 @@ export default function LoginForm({ onRegister }: Props) {
   const navigator = useRouter();
 
   const onSubmit = async (data: IFormData) => {
-    // navigator.push("/")
-    if (!isvalidate) {
-      setShowCaptcha(true);
-    }
-    if (isvalidate) {
-      const { phoneNumber, verifyCode, username, password } = data;
-      if (phoneNumber && verifyCode) {
-        const { data, code, errorMsg } = await loginUser({
-          way: 1,
-          phoneNumber,
-          smsCode: verifyCode,
-        });
-        if (code !== 200) {
-          toast.error(errorMsg, { duration: 1500 });
-        } else {
-          handleLogin(data);
-        }
-      
+    // // navigator.push("/")
+    // if (!isvalidate) {
+    //   setShowCaptcha(true);
+    // }
+    // // 
+    // setShowCaptcha(true);
+    const { phoneNumber, verifyCode, username, password } = data;
+    if (phoneNumber && verifyCode) {
+      const { data, code, errorMsg } = await loginUser({
+        way: 1,
+        phoneNumber,
+        smsCode: verifyCode,
+      });
+      if (code !== 200) {
+        toast.error(errorMsg, { duration: 1500 });
+      } else {
+        handleLogin(data);
       }
 
-      if (username && password) {
-        const { data, code, errorMsg } = await loginUser({
-          way: 2,
-          username,
-          password,
-        });
-        if (code !== 200) {
-          toast.error(errorMsg, { duration: 1500 });
-        } else {
-          handleLogin(data);
-        }
+    }
+
+    if (username && password) {
+      const { data, code, errorMsg } = await loginUser({
+        way: 2,
+        username,
+        password,
+      });
+      if (code !== 200) {
+        toast.error(errorMsg, { duration: 1500 });
+      } else {
+        handleLogin(data);
       }
     }
   };
@@ -140,50 +140,50 @@ export default function LoginForm({ onRegister }: Props) {
     setValidate(false);
   };
 
-  const handleOnCaptcha = useCallback(() => {
-    if (showCaptcha) {
-      // 实例化nc
-      (window as any).AWSC?.use("ic", function (state: any, module: any) {
-        // 初始化
-        (window as any).ic = module?.init({
-          // 应用类型标识。它和使用场景标识（scene字段）一起决定了滑动验证的业务场景与后端对应使用的策略模型。您可以在阿里云验证码控制台的配置管理页签找到对应的appkey字段值，请务必正确填写。
-          appkey: "FFFF0N0000000000B687",
-          //使用场景标识。它和应用类型标识（appkey字段）一起决定了滑动验证的业务场景与后端对应使用的策略模型。您可以在阿里云验证码控制台的配置管理页签找到对应的scene值，请务必正确填写。
-          scene: "ic_login",
-          height: "40px",
-          width: "400px",
-          // 声明滑动验证需要渲染的目标ID。
-          renderTo: "nc",
-          //前端滑动验证通过时会触发该回调参数。您可以在该回调参数中将会话ID（sessionId）、签名串（sig）、请求唯一标识（token）字段记录下来，随业务请求一同发送至您的服务端调用验签。
-          success: async function (result: any) {
-            const req: CheckCaptcha = {
-              sessionId: result.sessionId,
-              sig: result.sig,
-              token: result.token,
-              scene: "ic_login",
-              remoteIp: getServerDomain(),
-            };
-            const { data } = await validateCaptcha(req);
-            if (data) {
-              setValidate(true);
-            }
-          },
-          // 滑动验证失败时触发该回调参数。
-          fail: function (failCode: any) {
-            window.console && console.log(failCode);
-          },
-          // 验证码加载出现异常时触发该回调参数。
-          error: function (errorCode: any) {
-            window.console && console.log(errorCode);
-          },
-        });
-      });
-    }
-  }, [showCaptcha]);
+  // const handleOnCaptcha = useCallback(() => {
+  //   if (showCaptcha) {
+  //     // 实例化nc
+  //     (window as any).AWSC?.use("ic", function (state: any, module: any) {
+  //       // 初始化
+  //       (window as any).ic = module?.init({
+  //         // 应用类型标识。它和使用场景标识（scene字段）一起决定了滑动验证的业务场景与后端对应使用的策略模型。您可以在阿里云验证码控制台的配置管理页签找到对应的appkey字段值，请务必正确填写。
+  //         appkey: "FFFF0N0000000000B687",
+  //         //使用场景标识。它和应用类型标识（appkey字段）一起决定了滑动验证的业务场景与后端对应使用的策略模型。您可以在阿里云验证码控制台的配置管理页签找到对应的scene值，请务必正确填写。
+  //         scene: "ic_login",
+  //         height: "40px",
+  //         width: "400px",
+  //         // 声明滑动验证需要渲染的目标ID。
+  //         renderTo: "nc",
+  //         //前端滑动验证通过时会触发该回调参数。您可以在该回调参数中将会话ID（sessionId）、签名串（sig）、请求唯一标识（token）字段记录下来，随业务请求一同发送至您的服务端调用验签。
+  //         success: async function (result: any) {
+  //           const req: CheckCaptcha = {
+  //             sessionId: result.sessionId,
+  //             sig: result.sig,
+  //             token: result.token,
+  //             scene: "ic_login",
+  //             remoteIp: getServerDomain(),
+  //           };
+  //           const { data } = await validateCaptcha(req);
+  //           if (data) {
+  //             setValidate(true);
+  //           }
+  //         },
+  //         // 滑动验证失败时触发该回调参数。
+  //         fail: function (failCode: any) {
+  //           window.console && console.log(failCode);
+  //         },
+  //         // 验证码加载出现异常时触发该回调参数。
+  //         error: function (errorCode: any) {
+  //           window.console && console.log(errorCode);
+  //         },
+  //       });
+  //     });
+  //   }
+  // }, [showCaptcha]);
 
-  useEffect(() => {
-    handleOnCaptcha();
-  }, [handleOnCaptcha, showCaptcha]);
+  // useEffect(() => {
+  //   handleOnCaptcha();
+  // }, [handleOnCaptcha, showCaptcha]);
 
   return (
     <div className="bg-white w-[480px] h-[440px] rounded-[12px] shadow-3xl  hover:shadow-indigo-500/40 relative">
