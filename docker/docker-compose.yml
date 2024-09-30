@@ -33,6 +33,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./volumes/db/data:/var/lib/postgresql/data
+      - ./script.sql:/docker-entrypoint-initdb.d/script.sql
     ports:
       - "5432:5432"
 
