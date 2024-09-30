@@ -18,7 +18,7 @@ create table if not exists workspace
 
 comment on column workspace.manager_id is '管理员ID';
 
-alter table workspace owner to magic_emerge_rds;
+alter table workspace owner to postgres;
 
 create table if not exists app_store
 (
@@ -58,7 +58,7 @@ comment on column app_store.app_desc is '应用描述';
 
 comment on column app_store.app_avatar is '应用头像';
 
-alter table app_store owner to magic_emerge_rds;
+alter table app_store owner to postgres;
 
 create index if not exists app_store_app_kye_index
 	on app_store (app_key);
@@ -85,7 +85,7 @@ create table if not exists app_sub_record
 	app_sub_points integer default 0 not null
 );
 
-alter table app_sub_record owner to magic_emerge_rds;
+alter table app_sub_record owner to postgres;
 
 create table if not exists app_subscriber
 (
@@ -111,7 +111,7 @@ create table if not exists app_subscriber
 	membership_level smallint default 0 not null
 );
 
-alter table app_subscriber owner to magic_emerge_rds;
+alter table app_subscriber owner to postgres;
 
 create table if not exists recharge_record
 (
@@ -125,7 +125,7 @@ create table if not exists recharge_record
 	message_count integer default 0 not null
 );
 
-alter table recharge_record owner to magic_emerge_rds;
+alter table recharge_record owner to postgres;
 
 create table if not exists app_payment_record
 (
@@ -140,7 +140,7 @@ create table if not exists app_payment_record
 	payment_time timestamp default CURRENT_TIMESTAMP not null
 );
 
-alter table app_payment_record owner to magic_emerge_rds;
+alter table app_payment_record owner to postgres;
 
 create table if not exists app_personal_collection
 (
@@ -162,7 +162,7 @@ create table if not exists app_personal_collection
 
 comment on column app_personal_collection.app_type is '应用类型';
 
-alter table app_personal_collection owner to magic_emerge_rds;
+alter table app_personal_collection owner to postgres;
 
 create table if not exists law_search
 (
@@ -175,7 +175,7 @@ create table if not exists law_search
 	search_time timestamp default CURRENT_TIMESTAMP not null
 );
 
-alter table law_search owner to magic_emerge_rds;
+alter table law_search owner to postgres;
 
 create table if not exists workspace_members
 (
@@ -202,13 +202,13 @@ comment on column workspace_members.user_id is '用户id';
 
 comment on column workspace_members.user_type is 'OWNER、PARTNER';
 
-alter table workspace_members owner to magic_emerge_rds;
+alter table workspace_members owner to postgres;
 
 create table if not exists sys_user
 (
 	id varchar default ''::character varying not null
 		constraint sys_user_pk
-			primary key,
+				primary key,
 	username varchar default ''::character varying not null,
 	auth_password varchar default ''::character varying not null,
 	wechat varchar default ''::character varying not null,
@@ -225,13 +225,13 @@ create table if not exists sys_user
 	is_active boolean default false not null
 );
 
-alter table sys_user owner to magic_emerge_rds;
+alter table sys_user owner to postgres;
 
 create table if not exists app_news
 (
 	id varchar not null
 		constraint app_news_pk
-			primary key,
+				primary key,
 	title varchar default ''::character varying not null,
 	description varchar default ''::character varying,
 	news_time timestamp default CURRENT_TIMESTAMP not null,
@@ -252,13 +252,13 @@ comment on column app_news.is_public is '是否公开';
 
 comment on column app_news.news_source is '消息来源';
 
-alter table app_news owner to magic_emerge_rds;
+alter table app_news owner to postgres;
 
 create table if not exists app_category
 (
 	id serial not null
 		constraint app_category_pk
-			primary key,
+				primary key,
 	category_name varchar default ''::character varying not null,
 	is_valid boolean default true not null
 );
@@ -267,13 +267,13 @@ comment on table app_category is '应用类型';
 
 comment on column app_category.category_name is '名称';
 
-alter table app_category owner to magic_emerge_rds;
+alter table app_category owner to postgres;
 
 create table if not exists app_notify
 (
 	id bigserial not null
 		constraint app_notify_pk
-			primary key,
+				primary key,
 	warning_msg varchar(300) default ''::character varying not null,
 	alert_type varchar(10) default ''::character varying,
 	is_handle boolean default false,
@@ -299,13 +299,13 @@ comment on column app_notify.create_at is '创建时间';
 
 comment on column app_notify.update_at is '修改时间，处理时间';
 
-alter table app_notify owner to magic_emerge_rds;
+alter table app_notify owner to postgres;
 
 create table if not exists conversations
 (
 	id varchar default ''::character varying not null
 		constraint conversations_pk
-			primary key,
+				primary key,
 	conversation_name varchar(20) default ''::character varying not null,
 	conversation_id varchar(100) default ''::character varying not null,
 	create_at timestamp default CURRENT_TIMESTAMP not null,
@@ -327,13 +327,13 @@ comment on column conversations.is_deleted is '是否删除';
 
 comment on column conversations.app_id is '应用id';
 
-alter table conversations owner to magic_emerge_rds;
+alter table conversations owner to postgres;
 
 create table if not exists chat_messages
 (
 	id varchar default ''::character varying not null
 		constraint chat_messages_pk
-			primary key,
+				primary key,
 	message_id varchar(100) default ''::character varying not null,
 	created_at timestamp,
 	conversation_id varchar(100) default ''::character varying not null,
@@ -354,7 +354,7 @@ comment on column chat_messages.tokens is '消费token数';
 
 comment on column chat_messages.fee is '消耗的费用';
 
-alter table chat_messages owner to magic_emerge_rds;
+alter table chat_messages owner to postgres;
 
 create unique index if not exists chat_messages_id_uindex
 	on chat_messages (id);
