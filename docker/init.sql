@@ -368,19 +368,19 @@ create index if not exists chat_messages_conversation_id_index
 
 
 -- 初始化超级管理员
-INSERT INTO public.sys_user (username, auth_password, wechat, avatar_url, phone_number, user_role, is_deleted, email,
+INSERT INTO public.sys_user (id, username, auth_password, wechat, avatar_url, phone_number, user_role, is_deleted, email,
                              is_active)
-VALUES ('admin', 'xBDZ8qiR1aP24rkFBo4ncw==', '', '', 'xxxxx', 'SUPER_ADMIN', false, 'admin@magicemerge.ai', true);
+VALUES ('1', 'admin', 'xBDZ8qiR1aP24rkFBo4ncw==', '', '', 'xxxxx', 'SUPER_ADMIN', false, 'admin@magicemerge.ai', true);
 
 -- manager_id 必须是超级用户的id
-INSERT INTO public.workspace (id, name, is_valid, remark, create_by, create_at, update_by, update_at, is_deleted,
+INSERT INTO public.workspace (id, name, is_valid, remark, create_by, is_deleted,
                               is_public, manager_id)
-VALUES (1, 'Magic Emerge''s 默认空间', true, '默认空间', '', false, false, '1673979417059454978');
+VALUES (1, 'Magic Emerge''s 默认空间', true, '默认空间', '', false, false, '1');
 
 -- user_id 必须是超级用户的id
 INSERT INTO public.workspace_members (id, workspace_id, username, user_id, user_type, create_by, update_by, is_deleted,
                                       is_active)
-VALUES (1, 1, 'admin', '1673979417059454978', 'OWNER', '', '', false, true);
+VALUES (1, 1, 'admin', '1', 'OWNER', '', '', false, true);
 
 
 -- 增加应用类型
@@ -411,4 +411,3 @@ INSERT INTO public.app_category (id, category_name, is_valid)
 VALUES (12, '代码助手', true);
 INSERT INTO public.app_category (id, category_name, is_valid)
 VALUES (13, '教育', true);
-
