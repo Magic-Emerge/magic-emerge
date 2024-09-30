@@ -4,7 +4,7 @@
   <a href="./README_EN.md">English</a>
 </p>
 
-#What's New
+# What's New
 
 👋 嘿！我是〇一
 大家好，我是Magic Emerge的创始人，一个对产品有点“上头”的AI狂热分子。新技术？轻松驾驭！搞定它们就像喝咖啡一样简单，偶尔一不小心还能彻夜忘食，只为了把一个新想法变成现实。☕💻
