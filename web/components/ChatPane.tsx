@@ -91,7 +91,8 @@ const ChatPane: React.FC<ChatProps> = ({
         <div
           className={`p-4 whitespace-pre-wrap text-sm font-sans text-[#737A80] font-normal  rounded-[8px] bg-[#E6F2FF]`}
         >
-          {message.text || ""}
+          {message.text.replaceAll("\n", "<br />")
+          .replaceAll(" ", "&nbsp;") || ""}
         </div>
         <Image
           src={human}
@@ -180,7 +181,8 @@ const ChatPane: React.FC<ChatProps> = ({
               )}
               <IconCopy
                 size={18}
-                onClick={() => handleCopy(message.text || "")}
+                onClick={() => handleCopy(message.text.replaceAll("\n", "<br />")
+                  .replaceAll(" ", "&nbsp;").replaceAll("null", "") || "")}
               />
             </div>
           )}
