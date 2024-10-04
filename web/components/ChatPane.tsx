@@ -157,7 +157,8 @@ const ChatPane: React.FC<ChatProps> = ({
               },
             }}
           >
-            {message.text || ""}
+            {message.text.replaceAll("\n", "<br />")
+          .replaceAll(" ", "&nbsp;").replaceAll("null", "") || ""}
           </MemoizedReactMarkdown>
           {hoveredMessageId === message.messageId && (
             <div className="absolute -bottom-6 right-0 space-x-1 flex cursor-pointer">
