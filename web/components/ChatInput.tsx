@@ -81,7 +81,7 @@ export const ChatInput: FC<Props> = ({ isShow, onSend, loading, closeShowExample
           <textarea
             ref={textAreaRef}
             className="w-full overflow-hidden p-6 pr-12 bg-white shadow-lg shadow-slate-200 rounded-lg border font-sans text-sm  focus:outline-none focus:border-blue-primary focus:ring-1 focus:ring-blue-primary"
-            placeholder="与Emerge AI开始对话"
+            placeholder="与ME AI开始对话"
             style={{ resize: "none", height: textAreaHeight }}
             rows={1}
             value={content}
