@@ -92,7 +92,7 @@ const ChatPane: React.FC<ChatProps> = ({
           className={`p-4 whitespace-pre-wrap text-sm font-sans text-[#737A80] font-normal  rounded-[8px] bg-[#E6F2FF]`}
         >
           {message.text.replaceAll("\n", "<br />")
-          .replaceAll(" ", "&nbsp;") || ""}
+         || ""}
         </div>
         <Image
           src={human}
@@ -159,7 +159,7 @@ const ChatPane: React.FC<ChatProps> = ({
             }}
           >
             {message.text.replaceAll("\n", "<br />")
-          .replaceAll(" ", "&nbsp;").replaceAll("null", "") || ""}
+         .replaceAll("null", "") || ""}
           </MemoizedReactMarkdown>
           {hoveredMessageId === message.messageId && (
             <div className="absolute -bottom-6 right-0 space-x-1 flex cursor-pointer">
@@ -182,7 +182,7 @@ const ChatPane: React.FC<ChatProps> = ({
               <IconCopy
                 size={18}
                 onClick={() => handleCopy(message.text.replaceAll("\n", "<br />")
-                  .replaceAll(" ", "&nbsp;").replaceAll("null", "") || "")}
+                 .replaceAll("null", "") || "")}
               />
             </div>
           )}

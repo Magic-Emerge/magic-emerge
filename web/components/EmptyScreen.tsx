@@ -30,7 +30,7 @@ export function EmptyScreen({ setInput }: Props) {
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">
         <h1 className="mb-2 text-lg font-semibold">
-          欢迎使用Emerge AI
+          欢迎使用ME AI
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
           This is an open source AI chatbot app template built with{' '}
