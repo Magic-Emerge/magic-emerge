@@ -228,7 +228,7 @@ UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 - 作者: wechat
 
 <img src="./images/wechat.jpg" width="30%">
-<img src="./images/group.jpg" width="30%">
+
 
 
 
