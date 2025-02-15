@@ -213,7 +213,7 @@ VALUES (13, '教育', true);
 ## Contributer
 
 
-项目负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
+产品负责人/全栈开发: [@Zean Ma](https://github.com/GZ315200)
 
 UI/UX设计: [@Emir](https://www.zcool.com.cn/u/22000389)
 
